@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens World Theme</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primaryColor: #D8318A;
+            --secondaryColor: #1e272e;
+            --darkBg: #FFFFFF;
+            --themeFont: "Exo";
+        }
+
+        .s0101_universal * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--themeFont);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .s0101_container {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0px 20px;
+        }
+
+        svg {
+            display: flex;
+        }
+
+        .s0101_offer_intro_wrapper {
+            padding: 6px 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #0073A9;
+        }
+
+        .s0101_offer_intro_text {
+            font-size: 10px;
+            font-weight: 400;
+            color: #E2E2E2;
+        }
+
+        .s0101_header_content_main-wrapper {
+            width: 100%;
+            /* border-bottom: 1px solid rgba(0, 0, 0, 10%); */
+            background-color: #FEEBE7;
+            position: relative;
+        }
+
+        .s0101_header_content_wrapper {
+            padding: 5px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .s0101_header_logo {
+            height: 50px;
+            width: 83px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s0101_header_left_side_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 33.33%;
+            justify-content: start;
+        }
+
+        .s0101_header_middle_side_wrapper {
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .s0101_header_right_side_wrapper {
+            width: 33.33%;
+            display: flex;
+            justify-content: end;
+        }
+
+        .s0101_header_logo_content_wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .s0101_header_logo_title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--secondaryColor);
+            width: 80px;
+            display: none;
+        }
+
+        .s0101_header_logo_title.s0101_active_logo_title_text {
+            display: block;
+        }
+
+        .s0101_header_menu_list_item {
+            height: 22px;
+            width: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .s0101_wishlist_element {
+            display: none;
+        }
+
+        .s0101_cart_element {
+            display: none;
+        }
+
+        .s0101_hamburger_menu_wrapper {
+            display: none;
+        }
+
+        .s0101_right_side_text_part_wrapper {
+            display: none;
+        }
+
+        /* ====================================================
+        ================Mobile footer menu=====================
+        ======================================================= */
+        .s0101_mobile_footer_menu_wrapper {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            display: block;
+        }
+
+        .s0101_mobile_menu_list_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .s0101_mobile_menu_content_wrapper {
+            padding: 15px 0px;
+        }
+
+        .s0101_mobile_menu_list_item {
+            height: 30px;
+            width: 23px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* ======Fill color all class======= */
+        .s0101_active_fill.s0101_header_menu_list_item .s0101_header_menu_item_icon_wrapper svg path {
+            fill: var(--primaryColor);
+        }
+
+        .s0101_active_fill.s0101_mobile_menu_list_item .s0101_mobile_menu_list_icon_wrapper svg path {
+            fill: var(--primaryColor);
+        }
+
+        .s0101_active_fill.s0101_mobile_menu_list_item {
+            border-bottom: 1px solid var(--primaryColor);
+        }
+
+        .s0101_active_fill.s0101_mobile_menu_list_item .s0101_mobile_menu_list_icon_wrapper svg g {
+            opacity: 1;
+        }
+
+        /* =======notification========== */
+        .s0101_notification_add::after {
+            content: "";
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: var(--primaryColor);
+            top: 0;
+            left: 50%;
+            transform: translate(40%, 100%);
+        }
+
+        .s0101_mobile_icon_notification_add::after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: var(--primaryColor);
+            top: 0;
+            left: 50%;
+            transform: translate(47%, 280%);
+        }
+
+        .s0101_mobile_icon_wishlist_notification_add::after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: var(--primaryColor);
+            top: 0;
+            left: 50%;
+            transform: translate(18%, 254%);
+        }
+
+        /* mobile sidebar */
+        .s0101_open_sidebar.s0101_sidebar_main_wrapper {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            background-color: rgba(0, 0, 0, 50%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .s0101_sidebar_menu_content_wrapper {
+            height: 100vh;
+            width: 280px;
+            background-color: white;
+            padding: 30px;
+            position: absolute;
+            left: -100%;
+            top: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .s0101_open_sidebar .s0101_sidebar_menu_content_wrapper {
+            left: 0;
+        }
+
+        .s0101_sidebar_menu_list_wrapper {
+            height: calc(100vh - 230px);
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        .s0101_sidebar_menu_list_item_main_wrapper {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            justify-content: center;
+        }
+
+        .s0101_catagoryes_list_item_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .s0101_menu_item_name {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 100%);
+        }
+
+        .s0101_all_category_list_wrapper {
+            /* display: flex; */
+            justify-content: center;
+            list-style: none;
+            flex-direction: column;
+            gap: 21px;
+            padding-top: 20px;
+            display: none;
+        }
+
+        .s0101_catagory_item_content_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .s0101_catagory_item_name {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 100%);
+        }
+
+        /* open all catagories list class */
+        .s0101_open_menu.s0101_sidebar_menu_list_item .s0101_all_category_list_wrapper {
+            display: flex;
+        }
+
+        .s0101_open_menu.s0101_sidebar_menu_list_item .s0101_catagoryes_list_item_wrapper .s0101_menu_item_icon {
+            transform: rotate(-180deg);
+        }
+
+        .s0101_sub_sub_list_wrapper {
+            list-style: none;
+            border-left: 1px solid rgba(0, 0, 0, 50%);
+            padding-left: 10px;
+            margin-top: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 21px;
+        }
+
+        /* open sub menu */
+        .s0101_open_menu.s0101_catagory_item .s0101_sub_sub_list_wrapper {
+            display: flex;
+        }
+
+        .s0101_open_menu.s0101_sub_sub_list_item .s0101_sub_sub_list_item_content_wrapper .s0101_sub_sub_item-icon {
+            transform: rotate(-180deg);
+        }
+
+        .s0101_open_menu.s0101_sub_sub_list_item .s0101_sub_sub_list_item_content_wrapper .s0101_catafory_item_icon {
+            transform: rotate(-180deg);
+        }
+
+        .s0101_open_menu.s0101_catagory_item .s0101_catagory_item_content_wrapper .s0101_catafory_item_icon {
+            transform: rotate(-180deg);
+        }
+
+        .s0101_sub_sub_list_item_content_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .s0101_sub_sub_item_name {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 100%);
+        }
+
+        /* sub sub sub */
+        .s0101_sub-sub_sub_catagory_item_wrapper {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            padding-left: 10px;
+            border-left: 1px solid rgba(0, 0, 0, 50%);
+            margin-top: 21px;
+        }
+
+        .s0101_sub_sub_sub_content_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .s0101-sub_sub_item_name {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 100%);
+        }
+
+        .s0101_open_menu.s0101_sub_sub_list_item .s0101_sub-sub_sub_catagory_item_wrapper {
+            display: flex;
+        }
+
+        .s0101_open_menu.s0101_sub_sub_list_item .s0101_sub_sub_list_item_content_wrapper .s0101_sub_sub_item-icon {
+            transform: rotate(-180deg);
+        }
+
+        .s0101_open_menu.s0101_sub_sub_list_item .s0101_sub_sub_list_item_content_wrapper .s0101_sub_sub_item_name {
+            color: var(--primaryColor);
+        }
+
+        /* legal page style */
+        .s0101_legal_page_list_container {
+            padding-top: 20px;
+        }
+
+        .s0101_legal_page_list_wrapper {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .s0101_legal_page_list_item {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .s0101_sidebar_social_icon_list_wrapper {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .s0101_sidebar_social_icon_list_item {
+            height: 20px;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s0101_get_in_touch_title_text {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--secondaryColor);
+        }
+
+        .s0101_get_in_touch_title_wrapper {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .s0101_sidebar_close_btn {
+            height: 20px;
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s0101_sidebar_close_btn_wrapper {
+            display: flex;
+            justify-content: end;
+            padding-bottom: 40px;
+        }
+
+        .s0101_catagory_item_main_wrapper {
+            display: none;
+        }
+
+        /* search popup */
+        .s0101_search_box_main_wrapper {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            padding: 40px 20px;
+            z-index: 2;
+            transition: all 0.3s ease-out;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .s0101_active_search_popup .s0101_search_box_main_wrapper {
+            top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .s0101_input_field {
+            width: 100%;
+            padding: 11px 15px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            outline: none;
+            font-size: 12px;
+            font-weight: 400;
+            color: #000;
+            height: 36px;
+        }
+
+        .s0101_search_box_inner_content_wrapper {
+            max-width: 320px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .s0101_search_box_title_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 15px;
+        }
+
+        .s0101_search_box_title {
+            font-size: 12px;
+            font-weight: 500;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .s0101_popup_close_btn_wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 30px;
+            cursor: pointer;
+        }
+
+        /* .s0101_popup_close_btn_wrapper:hover .s0101_popup_close_btn svg {
+            transform: rotate(360deg);
+            transition: all 0.3s ease-out;
+            fill: var(--primaryColor);
+        } */
+        
+        .s0101_popup_close_btn svg:hover {
+            transform: rotate(360deg);
+            transition: all 0.3s ease-out;
+            fill: var(--primaryColor);
+        }
+
+        .s0101_popup_close_btn svg {
+            transform: rotate(0deg);
+            transition: all 0.3s ease-out;
+        }
+
+        .s0101_active_search_popup.s0101_search_result_main_wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 1;
+            transition: .3s all;
+        }
+
+        .s0101_search_result_content_wrapper {
+            padding: 0px 15px;
+            position: absolute;
+            width: 100%;
+            background-color: white;
+            max-height: 400px;
+            overflow: auto;
+        }
+
+        .s0101_suggest_result_wrapper {
+            position: relative;
+        }
+
+        .s0101_product_img_wrapper {
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s0101_product_img {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        .s0101_product_name {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--secondaryColor);
+        }
+
+        .s0101_search_result_item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 0px;
+            border-bottom: 1px solid rgba(112, 112, 112, 10%);
+        }
+
+        .s0101_search_result_item:last-child {
+            border-bottom: 0px solid rgba(0, 0, 0, .5);
+        }
+
+        @media screen and (min-width:640px) {
+
+            /* offer title */
+            .s0101_offer_intro_wrapper {
+                padding: 8px 70px;
+            }
+
+            .s0101_offer_intro_text {
+                font-size: 12px;
+            }
+
+            /* header content  */
+            .s0101_header_content_wrapper {
+                padding: 15px 0px;
+            }
+
+            /* hamburger icon */
+            .s0101_hamburger_menu_wrapper {
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* header menu item */
+            .s0101_header_menu_list_item {
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+            }
+
+            .s0101_header_menu_item_icon_wrapper svg {
+                height: 18px;
+                width: 18px;
+            }
+
+            /* draf menu header */
+            .s0101_wishlist_element {
+                display: block;
+            }
+
+            .s0101_cart_element {
+                display: block;
+            }
+
+            .s0101_header_right_content_wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .s0101_right_side_text_part_wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 18px;
+                /* position: relative; */
+                cursor: pointer;
+            }
+
+            .s0101_divider::after {
+                content: "";
+                height: 100%;
+                width: 1px;
+                background-color: rgba(0, 0, 0, 10%);
+                position: absolute;
+                top: 0;
+            }
+
+            .s0101_header_menu_list_wrapper {
+                display: flex;
+                list-style: none;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .s0101_my_account_text {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--secondaryColor);
+            }
+
+            /* mobile footer menu */
+            .s0101_mobile_footer_menu_wrapper {
+                display: none;
+            }
+
+            /* sidebar  item */
+            .s0101_sidebar_menu_content_wrapper {
+                width: 320px;
+            }
+
+            .s0101_sidebar_close_btn_wrapper {
+                padding-bottom: 35px;
+            }
+
+            .s0101_menu_item_name,
+            .s0101_catagory_item_name,
+            .s0101_sub_sub_item_name,
+            .s0101-sub_sub_item_name,
+            .s0101_legal_page_list_item,
+            .s0101_get_in_touch_title_text {
+                font-size: 14px;
+            }
+
+            .s0101_catagory_item_main_wrapper {
+                display: none;
+            }
+
+            /* search popup */
+            .s0101_search_box_main_wrapper {
+                padding: 60px 20px;
+            }
+
+            .s0101_search_box_inner_content_wrapper {
+                max-width: 600px;
+            }
+
+            .s0101_input_field {
+                padding: 15px 15px;
+                font-size: 14px;
+                height: 46px;
+            }
+
+            .s0101_search_box_title {
+                font-size: 14px;
+            }
+
+            .s0101_product_name {
+                font-size: 14px;
+            }
+
+            .s0101_product_img_wrapper {
+                height: 40px;
+                width: 40px;
+            }
+
+            .s0101_catafory_item_icon svg {
+                width: 8px;
+                height: 4px;
+            }
+
+            .s0101_menu_item_icon svg {
+                width: 8px;
+                height: 4px;
+            }
+
+            .s0101_sub_sub_item-icon svg {
+                width: 8px;
+                height: 4px;
+            }
+        }
+
+        @media screen and (min-width:1024px) {
+            .s0101_header_content_wrapper {
+                padding: 20px 0px;
+            }
+
+            .s0101_right_side_text_part_wrapper {
+                gap: 23px;
+            }
+
+            .s0101_header_right_content_wrapper {
+                gap: 25px;
+            }
+
+            .s0101_divider::after {
+                top: 0;
+            }
+
+            .s0101_hide_hamburger.s0101_hamburger_menu_wrapper {
+                display: none;
+            }
+
+            .s0101_header_logo_title {
+                font-size: 16px;
+                font-weight: 700;
+                width: 160px;
+            }
+
+            .s0101_header_logo svg {
+                height: 24px;
+                width: 40px;
+            }
+
+            .s0101_header_logo {
+                height: 60px;
+                width: 100px;
+                cursor: pointer;
+            }
+
+            /* large device catagory */
+            .s0101_catagory_item_main_wrapper {
+                display: block;
+            }
+
+            .s0101_header_left_side_wrapper {
+                gap: 25px;
+            }
+
+            .s0101_catagory_item_list_wrapper {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .s0101_catagory_item_list_item {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--secondaryColor);
+                cursor: pointer;
+            }
+
+            /* catagories style */
+            .s0101_catagories_main_wrapper {
+                padding: 25px;
+                position: absolute;
+            }
+
+            .s0101_catagories_list_iitem_wrapper {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .s0101_catagories_list_iitem {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--secondaryColor);
+            }
+
+            .s0101_catagories_title_wrapper {
+                padding-bottom: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 10%);
+            }
+
+            .s0101_catagories_title_text {
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--primaryColor);
+            }
+
+            .s0101_catagories_list_iitem_container {
+                padding-top: 15px;
+            }
+
+            .s0101_catagories_main_wrapper {
+                padding: 25px;
+                border: 1px solid rgba(0, 0, 0, 10%);
+                border-top: transparent;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                width: 100%;
+                max-height: 509px;
+                overflow: auto;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .s0101_catagories_item_main_container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 20px;
+                row-gap: 25px;
+            }
+
+            .s0101_catagory_item_list_item:hover {
+                color: var(--primaryColor);
+                transition: all 0.2s ease-in-out;
+            }
+
+            .s0101_catagory_item_list_item:hover .s0101_catagories_main_wrapper {
+                opacity: 1;
+                visibility: visible;
+                transition: all 0.7s ease-in-out;
+            }
+
+            .s0101_more_catagories_btn_wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 8px;
+                margin-top: 48px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .s0101_menu_item_wrapper {
+                display: flex;
+                justify-content: center;
+                padding: 10px 0px;
+                position: relative;
+            }
+
+            .s0101_more_catagories_btn_arrow {
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* .s0101_customized_header_menu_wrapper {
+                width: 100%;
+                background-color: darkgrey;
+            } */
+            /* .s0101_header_menu_item_icon_wrapper svg g path{
+                fill: var(--darkBg)!important;
+            } */
+            .s0101_catagory_item_list_item:hover .s0101_more_catagories_btn_text {
+                color: #000;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .s0101_more_catagories_btn_wrapper:hover .s0101_more_catagories_btn_arrow {
+                transform: translateX(10px);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .s0101_more_catagories_btn_wrapper:hover .s0101_more_catagories_btn_text {
+                color: var(--primaryColor);
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* search popup */
+            .s0101_search_box_main_wrapper {
+                padding: 60px 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="s0101_header_main_wrapper s0101_universal">
+            <!-- header area start -->
+            <div class="s0101_header_wrapper">
+                <!-- offer intro -->
+                <div class="s0101_offer_intro_wrapper">
+                    <p class="s0101_offer_intro_text">Limited time offer, This is intro price. We will increase price
+                        soon, Hurry up…</p>
+                </div>
+                <div class="s0101_header_content_main-wrapper">
+                    <div class="s0101_container">
+                        <div class="s0101_header_content_wrapper">
+                            <!-- header left side content -->
+                            <div class="s0101_header_left_side_wrapper">
+                                <!-- hamburger icon -->
+                                <div class="s0101_hamburger_menu_wrapper s0101_hide_hamburger">
+                                    <span class="s0101_hamburger_icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="18"
+                                            viewBox="0 0 22 18">
+                                            <g id="Icon" transform="translate(-21 -66)">
+                                                <g id="Shape_1" data-name="Shape 1" transform="translate(21 66)"
+                                                    stroke="#000" stroke-width="1">
+                                                    <rect width="22" height="2" stroke="none" />
+                                                    <rect x="0.5" y="0.5" width="21" height="1" fill="none" />
+                                                </g>
+                                                <g id="Shape_2" data-name="Shape 2" transform="translate(21 74)"
+                                                    stroke="#000" stroke-width="1">
+                                                    <rect width="17" height="2" stroke="none" />
+                                                    <rect x="0.5" y="0.5" width="16" height="1" fill="none" />
+                                                </g>
+                                                <g id="Shape_3" data-name="Shape 3" transform="translate(21 82)"
+                                                    stroke="#000" stroke-width="1">
+                                                    <rect width="22" height="2" stroke="none" />
+                                                    <rect x="0.5" y="0.5" width="21" height="1" fill="none" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <!-- left side logo content -->
+                                <div class="s0101_header_logo_content_wrapper">
+                                    <span class="s0101_header_logo">
+                                        <svg id="Logo" xmlns="http://www.w3.org/2000/svg" width="28" height="17.813"
+                                            viewBox="0 0 28 17.813">
+                                            <g id="Path_5" data-name="Path 5"
+                                                transform="translate(20 17.813) rotate(180)" fill="none">
+                                                <path d="M10,0,20,17.813H0Z" stroke="none" />
+                                                <path
+                                                    d="M 10 5.106893539428711 L 4.270536422729492 15.3125 L 15.72946357727051 15.3125 L 10 5.106893539428711 M 10 0 L 20 17.8125 L 0 17.8125 L 10 0 Z"
+                                                    stroke="none" fill="#000" />
+                                            </g>
+                                            <g id="Path_6" data-name="Path 6"
+                                                transform="translate(28 17.813) rotate(180)" fill="none">
+                                                <path d="M10,0,20,17.813H0Z" stroke="none" />
+                                                <path
+                                                    d="M 10 5.106893539428711 L 4.270536422729492 15.3125 L 15.72946357727051 15.3125 L 10 5.106893539428711 M 10 0 L 20 17.8125 L 0 17.8125 L 10 0 Z"
+                                                    stroke="none" fill="#000" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="s0101_header_logo_title s0101_active_logo_title_text">Women's
+                                        World</span>
+                                </div>
+                            </div>
+                            <!-- header middle content -->
+                            <div class="s0101_header_middle_side_wrapper">
+                                <!-- catagories menu  -->
+                                <div class="s0101_catagory_item_main_wrapper">
+                                    <ul class="s0101_catagory_item_list_wrapper">
+                                        <li class="s0101_catagory_item_list_item"> Makeup <div
+                                                class=" s0101_catagories_main_wrapper">
+                                                <div class="s0101_catagories_item_main_container">
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li>
+                                                                <li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation </li>
+                                                                <li class="s0101_catagories_list_iitem">Foundation</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="s0101_more_catagories_btn_wrapper">
+                                                    <span class="s0101_more_catagories_btn_text">More Catagories</span>
+                                                    <span class="s0101_more_catagories_btn_arrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25.869"
+                                                            height="8.909" viewBox="0 0 25.869 8.909">
+                                                            <g id="Arrow" transform="translate(-1524.5 -606.826)"
+                                                                opacity="0.5">
+                                                                <line id="Line_14" data-name="Line 14" x2="24.5"
+                                                                    transform="translate(1524.5 611.3)" fill="none"
+                                                                    stroke="#000" stroke-width="1" />
+                                                                <path id="Path_7" data-name="Path 7"
+                                                                    d="M1545.561,607.18l4.1,4.1-4.1,4.1" fill="none"
+                                                                    stroke="#000" stroke-width="1" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="s0101_catagory_item_list_item">Skin</li>
+                                        <li class="s0101_catagory_item_list_item">Hair <div
+                                                class=" s0101_catagories_main_wrapper">
+                                                <div class="s0101_catagories_item_main_container">
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!--  <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!--  <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="s0101_catagories_list_wrapper">
+                                                        <div class="s0101_catagories_title_wrapper">
+                                                            <span class="s0101_catagories_title_text">Face</span>
+                                                        </div>
+                                                        <div class="s0101_catagories_list_iitem_container">
+                                                            <ul class="s0101_catagories_list_iitem_wrapper">
+                                                                <!-- <li class="s0101_catagories_list_iitem">Face Premuare
+                                                                </li><li class="s0101_catagories_list_iitem">Makeup
+                                                                    Foundation
+                                                                </li><li class="s0101_catagories_list_iitem">Foundation</li> -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="s0101_more_catagories_btn_wrapper">
+                                                    <span class="s0101_more_catagories_btn_text">More Catagories</span>
+                                                    <span class="s0101_more_catagories_btn_arrow">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25.869"
+                                                            height="8.909" viewBox="0 0 25.869 8.909">
+                                                            <g id="Arrow" transform="translate(-1524.5 -606.826)"
+                                                                opacity="0.5">
+                                                                <line id="Line_14" data-name="Line 14" x2="24.5"
+                                                                    transform="translate(1524.5 611.3)" fill="none"
+                                                                    stroke="#000" stroke-width="1" />
+                                                                <path id="Path_7" data-name="Path 7"
+                                                                    d="M1545.561,607.18l4.1,4.1-4.1,4.1" fill="none"
+                                                                    stroke="#000" stroke-width="1" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="s0101_catagory_item_list_item">Perfume</li>
+                                        <li class="s0101_catagory_item_list_item">Makeup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- header right content -->
+                            <div class="s0101_header_right_side_wrapper">
+                                <div class="s0101_header_right_content_wrapper">
+                                    <div class="s0101_right_side_text_part_wrapper">
+                                        <span class="s0101_my_account_text">My Account</span>
+                                        <span class="s0101_divider"></span>
+                                    </div>
+                                    <div class="s0101_right_side_menu_part s0101_search_element">
+                                        <ul class="s0101_header_menu_list_wrapper">
+                                            <li class="s0101_header_menu_list_item">
+                                                <span class="s0101_header_menu_item_icon_wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                        viewBox="0 0 14 14">
+                                                        <g id="search" transform="translate(0 0)" fill="none">
+                                                            <path
+                                                                d="M14,13.175l-3.65-3.65a5.833,5.833,0,1,0-.825.825L13.175,14Z"
+                                                                stroke="none" />
+                                                            <path
+                                                                d="M 5.835530757904053 10.66661834716797 C 6.945580959320068 10.66661834716797 8.030981063842773 10.27918815612793 8.891780853271484 9.575688362121582 L 9.268121719360352 9.268119812011719 L 9.575691223144531 8.891778945922852 C 11.20691108703613 6.895818710327148 10.98716068267822 3.977798461914062 9.075410842895508 2.248648643493652 C 8.185100555419922 1.443378567695618 7.033960819244385 0.9998985528945923 5.834021091461182 0.9998985528945923 C 4.542480945587158 0.9998985528945923 3.328450918197632 1.502658605575562 2.415560960769653 2.415558576583862 C 0.592820942401886 4.238288402557373 0.5195109248161316 7.16364860534668 2.248651027679443 9.075398445129395 C 3.16330099105835 10.08663845062256 4.470670700073242 10.66661834716797 5.835530757904053 10.66661834716797 M 13.17507076263428 13.99989891052246 L 9.524590492248535 10.34999847412109 C 7.117983341217041 12.316819190979 3.591911315917969 12.05126953125 1.507010936737061 9.746198654174805 C -0.5778790712356567 7.441128730773926 -0.4892890751361847 3.906188488006592 1.70845091342926 1.708448529243469 C 3.906190156936646 -0.4893010556697845 7.441139221191406 -0.5778818726539612 9.746211051940918 1.50700855255127 C 12.05127048492432 3.59190845489502 12.31682109832764 7.117978572845459 10.35000133514404 9.524588584899902 L 13.99990081787109 13.17506885528564 L 13.17507076263428 13.99989891052246 Z"
+                                                                stroke="none" fill="#000" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="s0101_right_side_menu_part s0101_wishlist_element">
+                                        <ul class="s0101_header_menu_list_wrapper">
+                                            <li class="s0101_header_menu_list_item s0101_active_fill">
+                                                <span class="s0101_header_menu_item_icon_wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16.786"
+                                                        viewBox="0 0 18 16.786">
+                                                        <g id="heart" transform="translate(0.005 -0.917)" fill="none">
+                                                            <path
+                                                                d="M13.118.917A4.8,4.8,0,0,0,9,3.391,4.8,4.8,0,0,0,4.872.917,5.1,5.1,0,0,0,0,6.2C0,11.281,8.212,17.148,8.562,17.4L9,17.7l.433-.307c.349-.247,8.563-6.115,8.563-11.194A5.1,5.1,0,0,0,13.118.917Z"
+                                                                stroke="none" />
+                                                            <path
+                                                                d="M 4.892364501953125 2.417795181274414 C 2.943025588989258 2.526546478271484 1.423885345458984 4.189486503601074 1.49769401550293 6.145768165588379 L 1.498764038085938 6.202327728271484 C 1.498764038085938 7.862088203430176 2.819892883300781 10.11964797973633 5.218772888183594 12.55916786193848 C 6.718327522277832 14.08411026000977 8.257583618164062 15.29815483093262 8.997211456298828 15.85506916046143 C 11.43721389770508 14.03155517578125 16.49138259887695 9.559074401855469 16.49138259887695 6.202327728271484 L 16.49245262145996 6.145768165588379 C 16.56626129150391 4.189486503601074 15.04712104797363 2.526546478271484 13.09778213500977 2.417795181274414 C 11.93696975708008 2.451423645019531 10.87079048156738 3.099579811096191 10.30746269226074 4.117367744445801 L 8.995073318481445 6.488537788391113 L 7.682682991027832 4.117367744445801 C 7.119356155395508 3.099579811096191 6.053176879882812 2.451423645019531 4.892364501953125 2.417795181274414 M 4.871763229370117 0.9169979095458984 C 6.590073585510254 0.9437274932861328 8.162873268127441 1.887407302856445 8.995073318481445 3.390987396240234 C 9.827273368835449 1.887407302856445 11.40007400512695 0.9437274932861328 13.11838340759277 0.9169979095458984 C 15.91988372802734 1.038717269897461 18.09711265563965 3.400177955627441 17.99138259887695 6.202327728271484 C 17.99138259887695 11.28149795532227 9.777752876281738 17.14933776855469 9.428393363952637 17.39673805236816 L 8.995073318481445 17.7033576965332 L 8.561753273010254 17.39673805236816 C 8.212393760681152 17.1478385925293 -0.0012359619140625 11.28149795532227 -0.0012359619140625 6.202327728271484 C -0.1069660186767578 3.400177955627441 2.070262908935547 1.038717269897461 4.871763229370117 0.9169979095458984 Z"
+                                                                stroke="none" fill="#000" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="s0101_right_side_menu_part s0101_cart_element">
+                                        <ul class="s0101_header_menu_list_wrapper">
+                                            <li class="s0101_header_menu_list_item s0101_notification_add">
+                                                <span class="s0101_header_menu_item_icon_wrapper">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 18 18">
+                                                        <g id="shopping-bag_1_" data-name="shopping-bag (1)"
+                                                            fill="none">
+                                                            <path
+                                                                d="M13.5,4.5a4.5,4.5,0,1,0-9,0H0V15.75A2.25,2.25,0,0,0,2.25,18h13.5A2.25,2.25,0,0,0,18,15.75V4.5ZM9,1.5a3,3,0,0,1,3,3H6a3,3,0,0,1,3-3Z"
+                                                                stroke="none" />
+                                                            <path
+                                                                d="M 1.5 6 L 1.5 15.75 C 1.5 16.16354942321777 1.836450576782227 16.5 2.25 16.5 L 15.75 16.5 C 16.16354942321777 16.5 16.5 16.16354942321777 16.5 15.75 L 16.5 6 L 1.5 6 M 9 0 C 11.48528003692627 0 13.5 2.01471996307373 13.5 4.5 L 18 4.5 L 18 15.75 C 18 16.99263954162598 16.99263954162598 18 15.75 18 L 2.25 18 C 1.007360458374023 18 0 16.99263954162598 0 15.75 L 0 4.5 L 4.5 4.5 C 4.5 2.01471996307373 6.51471996307373 0 9 0 Z M 12 4.5 C 12 2.84315013885498 10.65684986114502 1.5 9 1.5 C 7.34315013885498 1.5 6 2.84315013885498 6 4.5 L 12 4.5 Z"
+                                                                stroke="none" fill="#000" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header customized menu -->
+                <!-- <div class="s0101_customized_header_menu_wrapper s0101_universal"><div class="s0101_container"><div class="s0101_menu_item_wrapper"></div></div></div> -->
+            </div>
+            <!-- mobile footer start -->
+            <div class="s0101_mobile_footer_menu_wrapper">
+                <div class="s0101_container">
+                    <div class="s0101_mobile_menu_content_wrapper">
+                        <ul class="s0101_mobile_menu_list_wrapper">
+                            <li class="s0101_mobile_menu_list_item">
+                                <span class="s0101_mobile_menu_list_icon_wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11.454"
+                                        viewBox="0 0 14 11.454">
+                                        <g id="Union_3" data-name="Union 3" transform="translate(2897 658)"
+                                            opacity="0.5">
+                                            <path
+                                                d="M -2883.500244140625 -647.045654296875 L -2896.500244140625 -647.045654296875 L -2896.500244140625 -647.3181762695312 L -2883.500244140625 -647.3181762695312 L -2883.500244140625 -647.045654296875 Z M -2886.68212890625 -652.136474609375 L -2896.500244140625 -652.136474609375 L -2896.500244140625 -652.4090576171875 L -2886.68212890625 -652.4090576171875 L -2886.68212890625 -652.136474609375 Z M -2883.500244140625 -657.2273559570312 L -2896.500244140625 -657.2273559570312 L -2896.500244140625 -657.4999389648438 L -2883.500244140625 -657.4999389648438 L -2883.500244140625 -657.2273559570312 Z"
+                                                stroke="none" />
+                                            <path
+                                                d="M -2883.000244140625 -646.545654296875 L -2897.000244140625 -646.545654296875 L -2897.000244140625 -647.8181762695312 L -2883.000244140625 -647.8181762695312 L -2883.000244140625 -646.545654296875 Z M -2886.18212890625 -651.636474609375 L -2897.000244140625 -651.636474609375 L -2897.000244140625 -652.9090576171875 L -2886.18212890625 -652.9090576171875 L -2886.18212890625 -651.636474609375 Z M -2883.000244140625 -656.7273559570312 L -2897.000244140625 -656.7273559570312 L -2897.000244140625 -657.9999389648438 L -2883.000244140625 -657.9999389648438 L -2883.000244140625 -656.7273559570312 Z"
+                                                stroke="none" fill="#121a46" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_mobile_menu_list_item s0101_mobile_icon_wishlist_notification_add">
+                                <span class="s0101_mobile_menu_list_icon_wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13.056"
+                                        viewBox="0 0 14 13.056">
+                                        <g id="heart" transform="translate(0.005 -0.917)" fill="none" opacity="0.5">
+                                            <path
+                                                d="M 6.995072841644287 13.36053085327148 L 6.94686222076416 13.326416015625 C 6.684792518615723 13.1397066116333 0.4979423582553864 8.689946174621582 0.4979423582553864 5.027806282043457 L 0.4979423582553864 5.018376350402832 L 0.4975823760032654 5.008956432342529 C 0.4261359870433807 3.115412950515747 1.904009103775024 1.507259607315063 3.794998645782471 1.417199611663818 C 4.943454742431641 1.440348625183105 6.001030445098877 2.077731132507324 6.557612419128418 3.083336353302002 L 6.995072364807129 3.873726367950439 L 7.43253231048584 3.083336353302002 C 7.989124298095703 2.077731132507324 9.046700477600098 1.440348625183105 10.19514656066895 1.417199611663818 C 12.08613586425781 1.507259607315063 13.56400871276855 3.115412950515747 13.49256229400635 5.008966445922852 L 13.49220275878906 5.018386363983154 L 13.49220275878906 5.027816295623779 C 13.49220275878906 6.516066551208496 12.4255428314209 8.387526512145996 10.40752220153809 10.43989658355713 C 8.821182250976562 12.05324649810791 7.220442295074463 13.20096683502197 7.043142318725586 13.32651615142822 L 6.995072841644287 13.36053085327148 Z"
+                                                stroke="none" />
+                                            <path
+                                                d="M 3.801830291748047 1.917491912841797 C 2.191958427429199 2.003457069396973 0.9363069534301758 3.375541687011719 0.9972324371337891 4.990097045898438 L 0.9979419708251953 5.027807235717773 C 0.9979419708251953 7.65534496307373 4.78956413269043 11.12081146240234 6.994124889373779 12.74328517913818 C 7.516543388366699 12.35460472106934 8.803103446960449 11.35848617553711 10.05100250244141 10.08934688568115 C 11.97515201568604 8.132427215576172 12.99220275878906 6.382176399230957 12.99220275878906 5.027807235717773 L 12.99291229248047 4.990097045898438 C 13.05383777618408 3.375541687011719 11.79818630218506 2.003457069396973 10.18831443786621 1.917491912841797 C 9.224031448364258 1.94289493560791 8.337762832641602 2.480332374572754 7.870002269744873 3.325467109680176 L 6.995062351226807 4.90623664855957 L 6.120142459869385 3.325456619262695 C 5.65239143371582 2.480332374572754 4.76611328125 1.94289493560791 3.801830291748047 1.917491912841797 M 3.788052558898926 0.916996955871582 C 5.12452220916748 0.9377870559692383 6.347812175750732 1.671756744384766 6.995072364807129 2.841206550598145 C 7.642342567443848 1.671756744384766 8.865622520446777 0.9377870559692383 10.20209217071533 0.916996955871582 C 12.38103199005127 1.011667251586914 14.07444190979004 2.848357200622559 13.99220275878906 5.027807235717773 C 13.99220275878906 8.978277206420898 7.603822231292725 13.54214668273926 7.332102298736572 13.7345666885376 L 6.995072364807129 13.97305679321289 L 6.658042430877686 13.7345666885376 C 6.386322498321533 13.54098701477051 -0.002058029174804688 8.978277206420898 -0.002058029174804688 5.027807235717773 C -0.08429718017578125 2.848357200622559 1.609112739562988 1.011667251586914 3.788052558898926 0.916996955871582 Z"
+                                                stroke="none" fill="#121a46" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_mobile_menu_list_item s0101_mobile_icon_notification_add">
+                                <span class="s0101_mobile_menu_list_icon_wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                        <g id="shopping-bag_1_" data-name="shopping-bag (1)" fill="none" opacity="0.5">
+                                            <path
+                                                d="M10.5,3.5a3.5,3.5,0,1,0-7,0H0v8.75A1.75,1.75,0,0,0,1.75,14h10.5A1.75,1.75,0,0,0,14,12.25V3.5ZM7,1.167A2.333,2.333,0,0,1,9.333,3.5H4.667A2.333,2.333,0,0,1,7,1.167Z"
+                                                stroke="none" />
+                                            <path
+                                                d="M 1 4.5 L 1 12.25 C 1 12.66355037689209 1.33644962310791 13 1.75 13 L 12.25 13 C 12.66355037689209 13 13 12.66355037689209 13 12.25 L 13 4.5 L 1 4.5 M 7 0 C 8.933000564575195 0 10.5 1.567000389099121 10.5 3.5 L 14 3.5 L 14 12.25 C 14 13.2165002822876 13.2165002822876 14 12.25 14 L 1.75 14 C 0.7834997177124023 14 0 13.2165002822876 0 12.25 L 0 3.5 L 3.5 3.5 C 3.5 1.567000389099121 5.067000389099121 0 7 0 Z M 9.333330154418945 3.5 C 9.333330154418945 2.211339950561523 8.288660049438477 1.166669845581055 7 1.166669845581055 C 5.711339950561523 1.166669845581055 4.666669845581055 2.211339950561523 4.666669845581055 3.5 L 9.333330154418945 3.5 Z"
+                                                stroke="none" fill="#121a46" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_mobile_menu_list_item s0101_active_fill">
+                                <span class="s0101_mobile_menu_list_icon_wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10.5" height="14"
+                                        viewBox="0 0 10.5 14">
+                                        <g id="user" transform="translate(-3 0)" opacity="0.5">
+                                            <g id="Union_2" data-name="Union 2" transform="translate(3102 328)"
+                                                fill="none">
+                                                <path
+                                                    d="M-3099-314v-2.942a2.9,2.9,0,0,1,2.892-2.892h4.717a2.9,2.9,0,0,1,2.892,2.892V-314Zm1.75-10.5a3.5,3.5,0,0,1,3.5-3.5,3.5,3.5,0,0,1,3.5,3.5,3.5,3.5,0,0,1-3.5,3.5A3.5,3.5,0,0,1-3097.25-324.5Z"
+                                                    stroke="none" />
+                                                <path
+                                                    d="M -3089.49951171875 -314.9996032714844 L -3089.49951171875 -316.9400329589844 C -3089.500732421875 -317.9824523925781 -3090.35009765625 -318.8316650390625 -3091.391357421875 -318.8330078125 L -3096.106689453125 -318.8330078125 C -3097.149169921875 -318.8316650390625 -3097.998291015625 -317.9823913574219 -3097.999755859375 -316.9412536621094 L -3097.999755859375 -314.9996032714844 L -3089.49951171875 -314.9996032714844 M -3093.74951171875 -321.9996032714844 C -3092.371337890625 -321.9996032714844 -3091.25 -323.1212158203125 -3091.25 -324.4998779296875 C -3091.25 -325.8782348632812 -3092.371337890625 -326.9996032714844 -3093.74951171875 -326.9996032714844 C -3095.128173828125 -326.9996032714844 -3096.25 -325.8782348632812 -3096.25 -324.4998779296875 C -3096.25 -323.1212158203125 -3095.128173828125 -321.9996032714844 -3093.74951171875 -321.9996032714844 M -3088.49951171875 -313.9996032714844 L -3098.999755859375 -313.9996032714844 L -3098.999755859375 -316.9412536621094 C -3098.99755859375 -318.5372924804688 -3097.70458984375 -319.8309326171875 -3096.10791015625 -319.8330078125 L -3091.391357421875 -319.8330078125 C -3089.79541015625 -319.8309326171875 -3088.50146484375 -318.5372924804688 -3088.49951171875 -316.9412536621094 L -3088.49951171875 -313.9996032714844 Z M -3093.74951171875 -320.9996032714844 C -3095.6826171875 -320.9996032714844 -3097.25 -322.5667724609375 -3097.25 -324.4998779296875 C -3097.25 -326.4329528808594 -3095.6826171875 -327.9996032714844 -3093.74951171875 -327.9996032714844 C -3091.81640625 -327.9996032714844 -3090.25 -326.4329528808594 -3090.25 -324.4998779296875 C -3090.25 -322.5667724609375 -3091.81640625 -320.9996032714844 -3093.74951171875 -320.9996032714844 Z"
+                                                    stroke="none" fill="#121a46" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile and tab sidebar -->
+            <div class="s0101_sidebar_main_wrapper">
+                <div class="s0101_sidebar_menu_content_wrapper">
+                    <div class="s0101_sidebar_close_btn_wrapper">
+                        <span class="s0101_sidebar_close_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10.414" height="10.414"
+                                viewBox="0 0 10.414 10.414">
+                                <path id="cross"
+                                    d="M9,.53,8.47,0,4.5,3.97.53,0,0,.53,3.97,4.5,0,8.47.53,9,4.5,5.03,8.47,9,9,8.47,5.03,4.5Z"
+                                    transform="translate(0.707 0.707)" fill="none" stroke="#000" stroke-width="1" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="s0101_sidebar_menu_list_wrapper">
+                        <ul class="s0101_sidebar_menu_list_item_main_wrapper">
+                            <li class="s0101_sidebar_menu_list_item s0101_open_menu">
+                                <div class="s0101_catagoryes_list_item_wrapper">
+                                    <span class="s0101_menu_item_name">All Catagories</span>
+                                    <span class="s0101_menu_item_icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                            viewBox="0 0 7 3.806">
+                                            <g id="Path_3" data-name="Path 3" transform="translate(-5.293 -8.207)"
+                                                fill="none">
+                                                <path
+                                                    d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                    stroke="none" />
+                                                <path
+                                                    d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                    stroke="none" fill="#000" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <ul class="s0101_all_category_list_wrapper">
+                                    <li class="s0101_catagory_item s0101_open_menu">
+                                        <div class="s0101_catagory_item_content_wrapper">
+                                            <span class="s0101_catagory_item_name">Catagory 1</span>
+                                            <span class="s0101_catafory_item_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                    viewBox="0 0 7 3.806">
+                                                    <g id="Path_3" data-name="Path 3"
+                                                        transform="translate(-5.293 -8.207)" fill="none">
+                                                        <path
+                                                            d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                            stroke="none" />
+                                                        <path
+                                                            d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                            stroke="none" fill="#000" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <ul class="s0101_sub_sub_list_wrapper">
+                                            <li class="s0101_sub_sub_list_item s0101_open_menu">
+                                                <div class="s0101_sub_sub_list_item_content_wrapper">
+                                                    <span class="s0101_sub_sub_item_name">sub sub 1</span>
+                                                    <span class="s0101_sub_sub_item-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                            viewBox="0 0 7 3.806">
+                                                            <g id="Path_3" data-name="Path 3"
+                                                                transform="translate(-5.293 -8.207)" fill="none">
+                                                                <path
+                                                                    d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                                    stroke="none" />
+                                                                <path
+                                                                    d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                                    stroke="none" fill="#000" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <!-- sub sub sub -->
+                                                <ul class="s0101_sub-sub_sub_catagory_item_wrapper">
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 1</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 3</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 3</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="s0101_sub_sub_list_item">
+                                                <div class="s0101_sub_sub_list_item_content_wrapper">
+                                                    <span class="s0101_sub_sub_item_name">sub sub 2</span>
+                                                    <span class="s0101_sub_sub_item-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                            viewBox="0 0 7 3.806">
+                                                            <g id="Path_3" data-name="Path 3"
+                                                                transform="translate(-5.293 -8.207)" fill="none">
+                                                                <path
+                                                                    d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                                    stroke="none" />
+                                                                <path
+                                                                    d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                                    stroke="none" fill="#000" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="s0101_sub_sub_list_item s0101_open_menu">
+                                                <div class="s0101_sub_sub_list_item_content_wrapper">
+                                                    <span class="s0101_sub_sub_item_name">sub sub 3</span>
+                                                    <span class="s0101_sub_sub_item-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                            viewBox="0 0 7 3.806">
+                                                            <g id="Path_3" data-name="Path 3"
+                                                                transform="translate(-5.293 -8.207)" fill="none">
+                                                                <path
+                                                                    d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                                    stroke="none" />
+                                                                <path
+                                                                    d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                                    stroke="none" fill="#000" />
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                                <!-- sub sub sub -->
+                                                <ul class="s0101_sub-sub_sub_catagory_item_wrapper">
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 1</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 3</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="s0101_sub_sub_sub_list_item">
+                                                        <div class="s0101_sub_sub_sub_content_wrapper">
+                                                            <span class="s0101-sub_sub_item_name">sub sub sub 2</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="s0101_sub_sub_list_item">
+                                                <div class="s0101_sub_sub_list_item_content_wrapper">
+                                                    <span class="s0101_sub_sub_item_name">sub sub 3</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="s0101_catagory_item">
+                                        <div class="s0101_catagory_item_content_wrapper">
+                                            <span class="s0101_catagory_item_name">Catagory 2</span>
+                                            <span class="s0101_catafory_item_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                    viewBox="0 0 7 3.806">
+                                                    <g id="Path_3" data-name="Path 3"
+                                                        transform="translate(-5.293 -8.207)" fill="none">
+                                                        <path
+                                                            d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                            stroke="none" />
+                                                        <path
+                                                            d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                            stroke="none" fill="#000" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="s0101_catagory_item">
+                                        <div class="s0101_catagory_item_content_wrapper">
+                                            <span class="s0101_catagory_item_name">Catagory 3</span>
+                                            <span class="s0101_catafory_item_icon">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="7" height="3.806"
+                                                    viewBox="0 0 7 3.806">
+                                                    <g id="Path_3" data-name="Path 3"
+                                                        transform="translate(-5.293 -8.207)" fill="none">
+                                                        <path
+                                                            d="M8.793,12.013a1.04,1.04,0,0,1-.738-.305L5.293,8.945l.738-.738,2.762,2.762,2.762-2.762.738.738L9.531,11.707A1.04,1.04,0,0,1,8.793,12.013Z"
+                                                            stroke="none" />
+                                                        <path
+                                                            d="M 8.791193962097168 12.01280212402344 C 8.515053749084473 12.01281070709229 8.250232696533203 11.90299224853516 8.055120468139648 11.70752048492432 L 5.293000221252441 8.944880485534668 L 6.030889987945557 8.207000732421875 L 8.793000221252441 10.9691104888916 L 11.55510997772217 8.207000732421875 L 12.29300022125244 8.944880485534668 L 9.530879974365234 11.70700073242188 C 9.335430145263672 11.90308094024658 9.070706367492676 12.01283359527588 8.793000221252441 12.01280117034912 C 8.79240894317627 12.01280212402344 8.79178524017334 12.01280212402344 8.791193962097168 12.01280212402344 Z"
+                                                            stroke="none" fill="#000" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <div class="s0101_legal_page_list_container">
+                                <ul class="s0101_legal_page_list_wrapper">
+                                    <li class="s0101_legal_page_list_item">About US</li>
+                                    <li class="s0101_legal_page_list_item">Contact US</li>
+                                    <li class="s0101_legal_page_list_item">FAQ</li>
+                                    <li class="s0101_legal_page_list_item">Privacy Policy</li>
+                                    <li class="s0101_legal_page_list_item">Term and Condition</li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="s0101_sidebar_social_icon_wrapper">
+                        <div class="s0101_get_in_touch_title_wrapper">
+                            <p class="s0101_get_in_touch_title_text">Get In Touch</p>
+                        </div>
+                        <ul class="s0101_sidebar_social_icon_list_wrapper">
+                            <li class="s0101_sidebar_social_icon_list_item">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.496" height="14"
+                                        viewBox="0 0 6.496 14">
+                                        <path id="Path_1689" data-name="Path 1689"
+                                            d="M3.248-8.064H1.04V-9.52a.673.673,0,0,1,.208-.544.62.62,0,0,1,.4-.128H3.216v-2.4l-2.16-.016A3.071,3.071,0,0,0-.768-12.1a2.464,2.464,0,0,0-.88,1.152,3.587,3.587,0,0,0-.224,1.28v1.6H-3.248V-5.6h1.376V1.392H1.04V-5.6H2.992Z"
+                                            transform="translate(3.248 12.608)" fill="#c1a59a" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_sidebar_social_icon_list_item">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15.824" height="15.824"
+                                        viewBox="0 0 15.824 15.824">
+                                        <path id="Path_1688" data-name="Path 1688"
+                                            d="M-.016-9.712a3.987,3.987,0,0,0-2.048.552,4.169,4.169,0,0,0-1.5,1.5,3.958,3.958,0,0,0-.56,2.056,4,4,0,0,0,.552,2.056,4.088,4.088,0,0,0,1.5,1.5A4.044,4.044,0,0,0-.008-1.5a4,4,0,0,0,2.056-.552,4.106,4.106,0,0,0,1.5-1.5A4,4,0,0,0,4.1-5.608a4,4,0,0,0-.552-2.056,4.106,4.106,0,0,0-1.5-1.5A4.016,4.016,0,0,0-.016-9.712Zm0,6.64a2.462,2.462,0,0,1-1.272-.344,2.58,2.58,0,0,1-.928-.928A2.462,2.462,0,0,1-2.56-5.616,2.42,2.42,0,0,1-2.216-6.88a2.6,2.6,0,0,1,.928-.92A2.462,2.462,0,0,1-.016-8.144,2.462,2.462,0,0,1,1.256-7.8a2.6,2.6,0,0,1,.928.92,2.42,2.42,0,0,1,.344,1.264,2.462,2.462,0,0,1-.344,1.272,2.58,2.58,0,0,1-.928.928A2.462,2.462,0,0,1-.016-3.072ZM3.344-13.52h-6.72a4.419,4.419,0,0,0-2.288.624A4.5,4.5,0,0,0-7.312-11.24,4.464,4.464,0,0,0-7.92-8.96v6.7A4.464,4.464,0,0,0-7.312.024,4.5,4.5,0,0,0-5.664,1.68,4.419,4.419,0,0,0-3.376,2.3h6.72a4.5,4.5,0,0,0,2.3-.624A4.6,4.6,0,0,0,7.28.048a4.5,4.5,0,0,0,.624-2.3v-6.7a4.5,4.5,0,0,0-.624-2.3A4.6,4.6,0,0,0,5.648-12.9,4.5,4.5,0,0,0,3.344-13.52ZM6.336-2.256a2.939,2.939,0,0,1-.4,1.5A2.957,2.957,0,0,1,4.848.336a2.939,2.939,0,0,1-1.5.4h-6.72a2.9,2.9,0,0,1-1.5-.4A2.976,2.976,0,0,1-5.952-.752a2.939,2.939,0,0,1-.4-1.5v-6.7a2.939,2.939,0,0,1,.4-1.5,2.976,2.976,0,0,1,1.08-1.088,2.9,2.9,0,0,1,1.5-.4h6.72a2.939,2.939,0,0,1,1.5.4,2.957,2.957,0,0,1,1.088,1.088,2.939,2.939,0,0,1,.4,1.5ZM4.16-10.912a1.047,1.047,0,0,0-.768.32,1.047,1.047,0,0,0-.32.768,1.021,1.021,0,0,0,.32.76,1.061,1.061,0,0,0,.768.312,1.034,1.034,0,0,0,.76-.312,1.034,1.034,0,0,0,.312-.76,1.061,1.061,0,0,0-.312-.768A1.021,1.021,0,0,0,4.16-10.912Z"
+                                            transform="translate(7.92 13.52)" fill="#c1a59a" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_sidebar_social_icon_list_item">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14.016" height="11.376"
+                                        viewBox="0 0 14.016 11.376">
+                                        <path id="Path_1687" data-name="Path 1687"
+                                            d="M7.008-9.952a6.157,6.157,0,0,1-1.664.464,2.666,2.666,0,0,0,.776-.672,2.867,2.867,0,0,0,.488-.928,5.243,5.243,0,0,1-1.824.7,2.646,2.646,0,0,0-.936-.672,2.879,2.879,0,0,0-1.16-.24,2.755,2.755,0,0,0-1.44.392A2.923,2.923,0,0,0,.208-9.856a2.8,2.8,0,0,0-.384,1.44,2.9,2.9,0,0,0,.064.656,8.112,8.112,0,0,1-3.312-.9,8.193,8.193,0,0,1-2.608-2.112,2.9,2.9,0,0,0-.384,1.432A2.832,2.832,0,0,0-6.072-7.96a2.9,2.9,0,0,0,.936,1.032,2.609,2.609,0,0,1-1.3-.368v.048a2.777,2.777,0,0,0,.648,1.824,2.828,2.828,0,0,0,1.656.992,2.912,2.912,0,0,1-.768.1,2.7,2.7,0,0,1-.528-.048A2.772,2.772,0,0,0-4.416-2.968,2.786,2.786,0,0,0-2.752-2.4a5.505,5.505,0,0,1-1.656.912,5.779,5.779,0,0,1-1.912.32q-.208,0-.64-.032h-.048A8.025,8.025,0,0,0-2.592.08a8.283,8.283,0,0,0,3.5-.736,7.775,7.775,0,0,0,2.56-1.92A8.583,8.583,0,0,0,5.04-5.2a8.228,8.228,0,0,0,.528-2.88v-.384A5.792,5.792,0,0,0,7.008-9.952Z"
+                                            transform="translate(7.008 11.296)" fill="#c1a59a" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_sidebar_social_icon_list_item">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13.92" height="14.016"
+                                        viewBox="0 0 13.92 14.016">
+                                        <path id="Path_1685" data-name="Path 1685"
+                                            d="M5.936-12.608H-5.92a1.016,1.016,0,0,0-.736.3.958.958,0,0,0-.3.712V.4a.958.958,0,0,0,.3.712,1.016,1.016,0,0,0,.736.3H5.936a1,1,0,0,0,.72-.3A.958.958,0,0,0,6.96.4v-12a.958.958,0,0,0-.3-.712A1,1,0,0,0,5.936-12.608ZM-2.736-.88h-2.1V-7.2h2.1ZM-3.792-8.064h-.016a1.141,1.141,0,0,1-.832-.312,1.049,1.049,0,0,1-.32-.784,1.037,1.037,0,0,1,.328-.784,1.191,1.191,0,0,1,.856-.312,1.163,1.163,0,0,1,.848.312,1.049,1.049,0,0,1,.32.784,1.049,1.049,0,0,1-.32.784A1.185,1.185,0,0,1-3.792-8.064ZM4.832-.88h-2.1V-4.272A1.816,1.816,0,0,0,2.5-5.3a.921.921,0,0,0-.816-.4,1.1,1.1,0,0,0-.7.24,1.5,1.5,0,0,0-.384.528,1.665,1.665,0,0,0-.064.512V-.88h-2.1V-3.824q.016-3.008,0-3.376h2.1v.9a2.1,2.1,0,0,1,1.888-1.04,2.246,2.246,0,0,1,1.728.688,3.065,3.065,0,0,1,.688,2.144Z"
+                                            transform="translate(6.96 12.608)" fill="#c1a59a" />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li class="s0101_sidebar_social_icon_list_item">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11.224"
+                                        viewBox="0 0 16 11.224">
+                                        <path id="YouTube"
+                                            d="M8-6.736H7.968V-7.2a4.288,4.288,0,0,0-.032-.432v-.032A3.4,3.4,0,0,0,7.9-8.048l-.032-.384Q7.856-8.688,7.84-8.8q-.064-.288-.224-.832a1.685,1.685,0,0,0-.352-.672,2.061,2.061,0,0,0-1.408-.72q-.288-.032-.848-.064l-.88-.048q-.8-.032-1.232-.032Q2.1-11.2,1.68-11.2H.9q-1.072-.016-1.6,0-.8,0-2.4.032l-1.344.048q-.7.032-1.064.064t-.7.1a1.84,1.84,0,0,0-1.184.848,2.941,2.941,0,0,0-.384,1.056q-.064.3-.128.912-.032.288-.064.88v.048Q-8-6.7-8-6.448q0,1.44.016,2.16,0,.192.032.544.032.512.064.768l.016.192q.016.256.032.384a5.062,5.062,0,0,0,.256.944A1.823,1.823,0,0,0-6.4-.32a4.873,4.873,0,0,0,1.1.192h.016q.208.016.608.032l.3.016q.512.032.768.032l1.184.032L.608.016,3.024-.032l.992-.032A2.585,2.585,0,0,0,4.352-.08H4.4q.688-.032,1.04-.064a5.267,5.267,0,0,0,.672-.08A1.924,1.924,0,0,0,7.584-1.472a4.876,4.876,0,0,0,.3-1.44q.032-.256.064-.784L8-4.832ZM-1.648-3.52v-4.5L2.672-5.76Z"
+                                            transform="translate(8 11.208)" fill="#c1a59a" />
+                                    </svg>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- search popup -->
+            <div class="s0101_search_result_main_wrapper">
+                <div class="s0101_search_box_main_wrapper">
+                    <div class="s0101_search_box_content_wrapper">
+                        <div class="s0101_popup_close_btn_wrapper">
+                            <span class="s0101_popup_close_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                    <path id="cross"
+                                        d="M14,.825,13.175,0,7,6.175.825,0,0,.825,6.175,7,0,13.175.825,14,7,7.825,13.175,14,14,13.175,7.825,7Z" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="s0101_container">
+                            <div class="s0101_search_box_inner_content_wrapper">
+                                <div class="s0101_search_box_title_wrapper">
+                                    <span class="s0101_search_box_title">Search</span>
+                                </div>
+                                <div class="s0101_search_box_wrapper">
+                                    <div class="s0101_input_field_wrapper">
+                                        <input class="s0101_input_field" type="text" placeholder="Search">
+                                    </div>
+                                    <div class="s0101_suggest_result_wrapper">
+                                        <div class="s0101_search_result_content_wrapper">
+                                            <div class="s0101_search_result_item">
+                                                <div class="s0101_product_img_wrapper">
+                                                    <img class="s0101_product_img" src="./Thumbnails-4.png" alt="">
+                                                </div>
+                                                <div class="s0101_product_name">
+                                                    <span class="s0101_product_name">Golden rose red lipstic</span>
+                                                </div>
+                                            </div>
+                                            <div class="s0101_search_result_item">
+                                                <div class="s0101_product_img_wrapper">
+                                                    <img class="s0101_product_img" src="./Thumbnails-4.png" alt="">
+                                                </div>
+                                                <div class="s0101_product_name">
+                                                    <span class="s0101_product_name">Golden rose red lipstic</span>
+                                                </div>
+                                            </div>
+                                            <div class="s0101_search_result_item">
+                                                <div class="s0101_product_img_wrapper">
+                                                    <img class="s0101_product_img" src="./Thumbnails-4.png" alt="">
+                                                </div>
+                                                <div class="s0101_product_name">
+                                                    <span class="s0101_product_name">Golden rose red lipstic</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
